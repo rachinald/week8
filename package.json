@@ -1,0 +1,15 @@
+{
+  "name": "week8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "SQLIntro.js",
+  "scripts": {
+    "prestart": "docker run --rm --name master32-mysql -dp 3306:3306 -v mysql-config:/etc -v mysql-data:/var/lib/mysql mysql/mysql-server:latest",
+    "start": "node index.js",
+    "poststart": "docker stop master32-mysql",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
