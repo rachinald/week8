@@ -4,12 +4,17 @@
   "description": "",
   "main": "SQLIntro.js",
   "scripts": {
-    "prestart": "docker run --rm --name master32-mysql -dp 3306:3306 -v mysql-config:/etc -v mysql-data:/var/lib/mysql mysql/mysql-server:latest",
+    "prestart": "docker run --rm --name master32-mysql -dp 3306:3306 -v mysql-config:/etc -v mysql-data:/var/lib/mysql mysql/mysql-server:latest && sleep 5",
     "start": "node index.js",
     "poststart": "docker stop master32-mysql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^11.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
+  }
 }
